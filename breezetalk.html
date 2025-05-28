@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>App Support - Report an Issue</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    nav {
+      background: #0056b3;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      padding: 10px;
+      margin-top: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 20px;
+      color: green;
+      text-align: center;
+    }
+
+    section {
+      margin-top: 50px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #888;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>North West Web Design & Technologies</h1>
+    <h3>Apps built -  Breezetalk, Shoutout</h3>
+  </header>
+
+  <nav>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="Terms.html">Terms & Conditions</a>
+    <a href="violations.html">Violation Policy</a>
+    <a href="fun.html">What’s Fun</a>
+  </nav>
+
+  <div class="container" id="report">
+    <h2>Submit a Support Request</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" id="supportForm">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_subject" value="New Support Request">
+      
+      <label for="name">Your Name</label>
+      <input type="text" name="Name" id="name" required />
+
+      <label for="email">Your Email</label>
+      <input type="email" name="Email" id="email" required />
+
+      <label for="type">Type of Issue</label>
+      <select name="Issue Type" id="type" required>
+        <option value="">-- Please choose one --</option>
+        <option value="Bug Report">Bug Report</option>
+        <option value="User Report">Report a User</option>
+        <option value="App Feedback">App Feedback</option>
+        <option value="harassment">Harassment</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="message">Details</label>
+      <textarea name="Message" id="message" rows="6" placeholder="Describe the issue or user report in detail..." required></textarea>
+
+      <button type="submit">Submit Report</button>
+
+      <div class="success-message" id="successMessage">Thanks! Your report has been sent.</div>
+    </form>
+  </div>
+
+  <div class="container" id="privacy">
+    <h2>Privacy Policy</h2>
+    <p>
+      We respect your privacy. Any data you submit through this support form is used only to improve your experience. We do not sell or share your personal information. For any concerns, contact us directly using the form above.
+    </p>
+  </div>
+
+  <div class="container" id="terms">
+    <h2>Terms and Conditions</h2>
+    <p>
+      By using our app, you agree to our terms: you must be respectful to other users, not exploit bugs or features unfairly, and use the app as intended. We reserve the right to ban or restrict access if these terms are violated.
+    </p>
+  </div>
+
+  <div class="container" id="violations">
+    <h2>Violation Policy</h2>
+    <p>
+      Violations include: harassment, hate speech, cheating, exploiting bugs, spamming, or attempting to hack the app. All reports are reviewed and action is taken based on severity and proof provided.
+    </p>
+  </div>
+
+  <div class="container" id="fun">
+    <h2>What’s Fun About the App</h2>
+    <p>
+      Our app is built for exciting experiences — whether it’s battling foes, collecting gear, solving puzzles, or climbing leaderboards. Players love the action, strategy, and surprises that make each session unique. It’s not just a game — it’s an adventure.
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 North West Web Design & Technologies. All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById('supportForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function () {
+      setTimeout(() => {
+        successMessage.style.display = 'block';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
